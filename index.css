@@ -107,6 +107,11 @@ max-height: 1.5rem;
 	max-height: 1.5rem;
 }
 
+.card-logo-top a {
+	text-decoration: none;
+	color: #dcb430;
+}
+
 
 .card-wrapper{
 /*	max-width: 32rem;*/
