@@ -471,7 +471,8 @@ https://pngtree.com/
 					document.getElementById("contactForm").reset(); // Clear the form
 					grecaptcha.reset(); // Reset the reCAPTCHA widget
 				}, function (error) {
-					console.log("Failed...", error);
+
+					console.log("Failed...", error,recaptchaResponse);
 					alert("Failed to send message. Please try again.");
 				});
 		});
