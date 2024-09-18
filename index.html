@@ -340,7 +340,7 @@
 
 
 					<div class="col-12  my-4 text-center">
-						<h4 class="mb-4 ">&lt;Contact Me/></h4>
+						<h3 class="mb-5 ">&lt;Contact Me/></h3>
 
 						<a class="mx-1 " href="https://www.facebook.com/papol22/" target="_blank"><i
 								class="c-icon text-light fa-brands fa-facebook"></i></a>
@@ -371,19 +371,15 @@
 										<textarea class="form-control" id="message" name="message" rows="3"
 											required></textarea>
 									</div>
-									<div class="">
-										<div class="col">
-											<div class="g-recaptcha mt-3" data-sitekey="6LePqEcqAAAAAGdi7kwVHAUvkVBjdHtUuz9ab4Vh"></div>
-											
+									<div class="row d-flex justify-content-center align-items-center text-center">
+										<div class="col-auto">
+											<div class="g-recaptcha mt-3"
+												data-sitekey="6LePqEcqAAAAAGdi7kwVHAUvkVBjdHtUuz9ab4Vh"></div>
 										</div>
-										<div class="col">
-											<button type="submit" class="btn btn-primary mt-3">Send</button>
+										<div class="col-12 mt-3">
+											<button type="submit" class="btn btn-primary w-100">Send</button>
 										</div>
-
-										
-										
 									</div>
-
 
 
 								</form>
@@ -447,6 +443,17 @@ https://pngtree.com/
 		document.getElementById("contactForm").addEventListener("submit", function (event) {
 			event.preventDefault(); // Prevent the default form submission
 
+			// Get reCAPTCHA response token
+			const recaptchaResponse = grecaptcha.getResponse();
+
+			// Check if reCAPTCHA was completed
+			if (recaptchaResponse.length === 0) {
+				// Alert the user that reCAPTCHA is not completed
+				alert("Please verify that you're not a robot.");
+				return; // Stop form submission
+			}
+
+
 			// Collect form data
 			const formData = {
 				name: document.getElementById("name").value,
@@ -454,6 +461,8 @@ https://pngtree.com/
 				message: document.getElementById("message").value,
 				"g-recaptcha-response": recaptchaResponse // Pass the reCAPTCHA token
 			};
+
+
 
 			// Send email using EmailJS
 			emailjs.send("service_lp68yik", "template_smr8lkl", formData)
