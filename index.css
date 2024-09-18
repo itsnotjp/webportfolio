@@ -166,8 +166,8 @@ max-height: 1.5rem;
 	background-position: bottom 10% right;
 	background-attachment: fixed;*/
 
-	background: #1c293c url("./images/contact.webp");
-	background-size: 110vh auto ;
+	background: #060d1c url("./images/contact-bg1.png");
+	background-size: 130vh auto ;
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	background-attachment: fixed;
