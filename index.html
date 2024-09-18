@@ -462,6 +462,10 @@ https://pngtree.com/
 				"g-recaptcha-response": recaptchaResponse // Pass the reCAPTCHA token
 			};
 
+			// Disable the button and show loading indicator
+			const submitButton = document.getElementById("sendButton");
+			submitButton.disabled = true;
+			submitButton.innerHTML = "Sending...";
 
 
 			// Send email using EmailJS
@@ -470,10 +474,14 @@ https://pngtree.com/
 					alert("Message sent successfully!");
 					document.getElementById("contactForm").reset(); // Clear the form
 					grecaptcha.reset(); // Reset the reCAPTCHA widget
+					submitButton.disabled = false;
+					submitButton.innerHTML = "Send";
 				}, function (error) {
 
-					console.log("Failed...", error,recaptchaResponse);
+					console.log("Failed...", error, recaptchaResponse);
 					alert("Failed to send message. Please try again.");
+					submitButton.disabled = false;
+					submitButton.innerHTML = "Send";
 				});
 		});
 	</script>
