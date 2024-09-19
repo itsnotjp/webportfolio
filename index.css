@@ -7,8 +7,12 @@
 	font-optical-sizing: auto;
 	font-weight: normal;
 	font-style: normal;
-
+	
 	scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
 }
 
 
@@ -98,7 +102,6 @@ body {
 
 .card-logo-top {
 /*	max-height: 1.5rem;*/
-
 max-height: 1.5rem;
 
 }
@@ -107,8 +110,8 @@ max-height: 1.5rem;
 	max-height: 1.5rem;
 }
 
-.card-logo-top a {
-	text-decoration: none;
+.card-logo-top span {
+	
 	color: #dcb430;
 }
 
